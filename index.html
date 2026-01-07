@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern To-Do List</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>My <span class="highlight">Tasks</span></h1>
+            <p id="date-display"></p>
+        </header>
+
+        <!-- Controls: Search and Filter -->
+        <div class="controls">
+            <div class="search-box">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="search-input" placeholder="Search tasks...">
+            </div>
+            <div class="filter-tabs">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="pending">Pending</button>
+                <button class="filter-btn" data-filter="completed">Done</button>
+            </div>
+        </div>
+
+        <!-- Add New Task -->
+        <div class="input-area">
+            <input type="text" id="task-input" placeholder="Add a new task...">
+            <button id="add-btn"><i class="fa-solid fa-plus"></i></button>
+        </div>
+
+        <!-- Task List -->
+        <div class="task-list-container">
+            <ul id="task-list">
+                <!-- Tasks will be injected here -->
+            </ul>
+            <div id="empty-state" class="hidden">
+                <i class="fa-solid fa-clipboard-list"></i>
+                <p>No tasks found.</p>
+            </div>
+        </div>
+
+        <!-- Footer Stats -->
+        <footer>
+            <div class="stats">
+                <span>Total: <b id="total-count">0</b></span>
+                <span>Pending: <b id="pending-count">0</b></span>
+                <span>Done: <b id="completed-count">0</b></span>
+            </div>
+            <button id="clear-completed-btn">Clear Completed</button>
+        </footer>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast hidden">Message</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
